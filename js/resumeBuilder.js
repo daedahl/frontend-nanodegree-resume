@@ -25,3 +25,18 @@ $("#main").append(bio.contact.email);
 $("#main").append(bio.picture);
 $("#main").append(bio.welcome);
 $("#main").append(bio.skills);
+
+var work = {};
+work.position = "Tower Climber";
+work.company = "Virigia Broadband";
+work.years = 1;
+work.city = "Culpeper";
+
+$("#main").append(work.position);
+
+var education = {};
+education["school"] = "Mary Washington College";
+education["years"] = "2001-2003";
+education["city"] = "Fredericksburg";
+
+$("#main").append(education["school"]);
