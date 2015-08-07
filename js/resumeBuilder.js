@@ -26,17 +26,27 @@ $("#main").append(bio.picture);
 $("#main").append(bio.welcome);
 $("#main").append(bio.skills);
 
-var work = {};
-work.position = "Tower Climber";
-work.company = "Virigia Broadband";
-work.years = 1;
-work.city = "Culpeper";
+var work = {
+	"employer" : [
+		{
+			"name" : "Virginia Broadband",
+			"position" : "Tower Climber",
+			"years" : 1,
+			"city" : "Culpeper"
+		}
+	]
+};
 
-$("#main").append(work.position);
+$("#main").append(work.employer[0].position);
 
-var education = {};
-education["school"] = "Mary Washington College";
-education["years"] = "2001-2003";
-education["city"] = "Fredericksburg";
+var education = {
+	"school" : [
+		{
+			"name" : "Mary Washington College",
+			"years" : "2001-2003",
+			"city" : "Fredericksburg"
+		}
+	]
+};
 
-$("#main").append(education["school"]);
+$("#main").append(education.school[0].name);
