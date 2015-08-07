@@ -1,8 +1,8 @@
-var formattedName = HTMLheaderName.replace("%data%", "Dave Figueroa");
-var formattedRole = HTMLheaderRole.replace("%data%", "Web Developer");
+//var formattedName = HTMLheaderName.replace("%data%", "Dave Figueroa");
+//var formattedRole = HTMLheaderRole.replace("%data%", "Web Developer");
 
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
+//$("#header").prepend(formattedRole);
+//$("#header").prepend(formattedName);
 
 var bio = {
 	"name" : "Dave Figueroa",
@@ -19,13 +19,6 @@ var bio = {
 	]
 };
 
-$("#main").append(bio.name);
-$("#main").append(bio.role);
-$("#main").append(bio.contact.email);
-$("#main").append(bio.picture);
-$("#main").append(bio.welcome);
-$("#main").append(bio.skills);
-
 var work = {
 	"employer" : [
 		{
@@ -37,7 +30,9 @@ var work = {
 	]
 };
 
-$("#main").append(work.employer[0].position);
+var projects = {
+
+};
 
 var education = {
 	"school" : [
@@ -46,7 +41,13 @@ var education = {
 			"years" : "2001-2003",
 			"city" : "Fredericksburg"
 		}
+	],
+	"onlineCourse" : [
+		{
+			"name" : "Intro to Computer Science"
+		},
+		{
+			"name" : "Applied Cryptography"
+		}
 	]
 };
-
-$("#main").append(education.school[0].name);
