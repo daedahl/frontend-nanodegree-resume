@@ -1,8 +1,8 @@
-//var formattedName = HTMLheaderName.replace("%data%", "Dave Figueroa");
-//var formattedRole = HTMLheaderRole.replace("%data%", "Web Developer");
+var formattedName = HTMLheaderName.replace("%data%", "Dave Figueroa");
+var formattedRole = HTMLheaderRole.replace("%data%", "Web Developer");
 
-//$("#header").prepend(formattedRole);
-//$("#header").prepend(formattedName);
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
 
 var bio = {
 	"name" : "Dave Figueroa",
@@ -51,3 +51,10 @@ var education = {
 		}
 	]
 };
+
+if (bio.skills) {
+	$("#header").append(HTMLskillsStart);
+	for (each in bio.skills){
+		$("#skills").append(HTMLskills.replace("%data%", bio.skills[each]));
+	}
+}
