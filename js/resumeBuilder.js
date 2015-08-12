@@ -70,3 +70,10 @@ if (work.job) {
 		$(".work-entry:last").append(HTMLworkDescription.replace("%data%", work.job[each].description));
 	}
 }
+
+// This logs the location of user screen clicks
+$(document).click(function(loc) {
+	var x = loc.pageX;
+	var y = loc.pageY;
+	logClicks(x,y);
+});
