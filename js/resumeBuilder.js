@@ -20,12 +20,13 @@ var bio = {
 };
 
 var work = {
-	"employer" : [
+	"job" : [
 		{
-			"name" : "Virginia Broadband",
-			"position" : "Tower Climber",
-			"years" : 1,
-			"city" : "Culpeper"
+			"employer" : "Virginia Broadband",
+			"title" : "Tower Climber / Field Technician",
+			"dates" : "2014-2015",
+			"location" : "Culpeper, VA",
+			"description" : "Responsible for evaluating, installing and maintaining both wired and wireless networks along with all related network components and peripherals across a network spanning a geographical area of hundreds of square miles"
 		}
 	]
 };
@@ -56,5 +57,16 @@ if (bio.skills) {
 	$("#header").append(HTMLskillsStart);
 	for (each in bio.skills){
 		$("#skills").append(HTMLskills.replace("%data%", bio.skills[each]));
+	}
+}
+
+if (work.job) {
+	for (each in work.job){
+		$("#workExperience").append(HTMLworkStart);
+		$(".work-entry:last").append(HTMLworkEmployer.replace("%data%", work.job[each].employer));
+		$(".work-entry:last").append(HTMLworkTitle.replace("%data%", work.job[each].title));
+		$(".work-entry:last").append(HTMLworkLocation.replace("%data%", work.job[each].location));
+		$(".work-entry:last").append(HTMLworkDates.replace("%data%", work.job[each].dates));
+		$(".work-entry:last").append(HTMLworkDescription.replace("%data%", work.job[each].description));
 	}
 }
