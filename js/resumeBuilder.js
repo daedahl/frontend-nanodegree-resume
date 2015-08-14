@@ -32,7 +32,14 @@ var work = {
 };
 
 var projects = {
-
+	"item" : [
+		{
+			"title" : "Portfolio",
+			"dates" : "July 2015 - August 2015",
+			"description" : "Project One was the portfolio project",
+			"image" : ""
+		}
+	]
 };
 
 var education = {
@@ -70,6 +77,17 @@ if (work.job) {
 		$(".work-entry:last").append(HTMLworkDescription.replace("%data%", work.job[each].description));
 	}
 }
+
+projects.display = function() {
+	for (each in projects.item){
+		$("#projects").append(HTMLprojectStart);
+		$(".project-entry:last").append(HTMLprojectTitle.replace("%data%", projects.item[each].title));
+		$(".project-entry:last").append(HTMLprojectDates.replace("%data%", projects.item[each].dates));
+		$(".project-entry:last").append(HTMLprojectDescription.replace("%data%", projects.item[each].description));
+	}
+}
+
+projects.display();
 
 // This logs the location of user screen clicks
 $(document).click(function(loc) {
