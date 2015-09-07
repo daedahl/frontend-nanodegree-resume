@@ -8,7 +8,8 @@ var bio = {
 	"name" : "Dave Figueroa",
 	"role" : "Web Developer",
 	"contact" : {
-		"email" : "davefig@gmail.com"
+		"email" : "davefig@gmail.com",
+		"location" : "Culpeper, VA"
 	},
 	"picture" : "/images/profilepic.png",
 	"welcome" : "Welcome to my resume",
@@ -47,7 +48,7 @@ var education = {
 		{
 			"name" : "Mary Washington College",
 			"years" : "2001-2003",
-			"city" : "Fredericksburg"
+			"location" : "Fredericksburg, VA"
 		}
 	],
 	"onlineCourse" : [
@@ -95,3 +96,5 @@ $(document).click(function(loc) {
 	var y = loc.pageY;
 	logClicks(x,y);
 });
+
+$("#mapDiv").append(googleMap);
