@@ -7,29 +7,34 @@ $("#header").prepend(formattedName);
 var bio = {
 	"name" : "Dave Figueroa",
 	"role" : "Web Developer",
-	"contact" : {
+	"contacts" : {
+		"mobile" : "",
 		"email" : "davefig@gmail.com",
+		"github" : "",
+		"twitter" : "",
 		"location" : "Culpeper, VA"
 	},
-	"picture" : "/images/profilepic.png",
-	"welcome" : "Welcome to my resume",
+	"welcomeMessage" : "Welcome to my resume",
 	"skills" : [
 		"HTML",
 		"CSS",
 		"Javascript"
-	]
+	],
+	"biopic" : "/images/profilepic.png",
+	"display" : ""
 };
 
 var work = {
-	"job" : [
+	"jobs" : [
 		{
 			"employer" : "Virginia Broadband",
 			"title" : "Tower Climber / Field Technician",
-			"dates" : "2014-2015",
 			"location" : "Culpeper, VA",
+			"dates" : "2014-2015",
 			"description" : "Responsible for evaluating, installing and maintaining both wired and wireless networks along with all related network components and peripherals across a network spanning a geographical area of hundreds of square miles"
 		}
-	]
+	],
+	"display" : ""
 };
 
 var projects = {
@@ -38,27 +43,38 @@ var projects = {
 			"title" : "Portfolio",
 			"dates" : "July 2015 - August 2015",
 			"description" : "Project One was the portfolio project",
-			"image" : ""
+			"images" : []
 		}
-	]
+	],
+	"display" : ""
 };
 
 var education = {
-	"school" : [
+	"schools" : [
 		{
 			"name" : "Mary Washington College",
-			"years" : "2001-2003",
-			"location" : "Fredericksburg, VA"
+			"location" : "Fredericksburg, VA",
+			"degree" : "",
+			"majors" : [],
+			"dates" : "2001-2003",
+			"url" : ""
 		}
 	],
-	"onlineCourse" : [
+	"onlineCourses" : [
 		{
-			"name" : "Intro to Computer Science"
+			"title" : "Intro to Computer Science",
+			"school" : "",
+			"date" : "",
+			"url" : "",
 		},
 		{
-			"name" : "Applied Cryptography"
+			"title" : "Applied Cryptography",
+			"school" : "",
+			"date" : "",
+			"url" : "",
 		}
-	]
+	],
+	"display" : ""
 };
 
 if (bio.skills) {
@@ -68,14 +84,14 @@ if (bio.skills) {
 	}
 }
 
-if (work.job) {
-	for (each in work.job){
+if (work.jobs) {
+	for (each in work.jobs){
 		$("#workExperience").append(HTMLworkStart);
-		$(".work-entry:last").append(HTMLworkEmployer.replace("%data%", work.job[each].employer));
-		$(".work-entry:last").append(HTMLworkTitle.replace("%data%", work.job[each].title));
-		$(".work-entry:last").append(HTMLworkLocation.replace("%data%", work.job[each].location));
-		$(".work-entry:last").append(HTMLworkDates.replace("%data%", work.job[each].dates));
-		$(".work-entry:last").append(HTMLworkDescription.replace("%data%", work.job[each].description));
+		$(".work-entry:last").append(HTMLworkEmployer.replace("%data%", work.jobs[each].employer));
+		$(".work-entry:last").append(HTMLworkTitle.replace("%data%", work.jobs[each].title));
+		$(".work-entry:last").append(HTMLworkLocation.replace("%data%", work.jobs[each].location));
+		$(".work-entry:last").append(HTMLworkDates.replace("%data%", work.jobs[each].dates));
+		$(".work-entry:last").append(HTMLworkDescription.replace("%data%", work.jobs[each].description));
 	}
 }
 
