@@ -1,18 +1,22 @@
+/* Content in JSON */
 var bio = {
 	"name" : "Dave Figueroa",
 	"role" : "Web Developer",
 	"contacts" : {
-		"mobile" : "abc",
+		"mobile" : "(540) 829-2277",
 		"email" : "davefig@gmail.com",
-		"github" : "xyz",
-		"twitter" : "123",
+		"github" : "daedahl",
+		"twitter" : "@daedahl",
 		"location" : "Culpeper, VA"
 	},
-	"welcomeMessage" : "Welcome to my resume",
+	"welcomeMessage" : "Skilled Developer & Programmer seeking full-time employment",
 	"skills" : [
 		"HTML",
 		"CSS",
-		"Javascript"
+		"Javascript",
+		"PHP",
+		"Python",
+		"Networks"
 	],
 	"biopic" : "images/profilepic.png",
 	"display" : ""
@@ -24,8 +28,12 @@ var work = {
 			"employer" : "Virginia Broadband",
 			"title" : "Tower Climber / Field Technician",
 			"location" : "Culpeper, VA",
-			"dates" : "2014-2015",
-			"description" : "Responsible for evaluating, installing and maintaining both wired and wireless networks along with all related network components and peripherals across a network spanning a geographical area of hundreds of square miles"
+			"dates" : "2014-present",
+			"description" : "Responsible for evaluating, installing and maintaining communications hardware along with all related components and peripherals across a network spanning a geographical area of hundreds of square miles",
+			"bullets" : [
+				"Certified Tower Climber and Rescuer",
+				"Networking (N+) Certification"
+			]
 		}
 	],
 	"display" : ""
@@ -34,10 +42,16 @@ var work = {
 var projects = {
 	"item" : [
 		{
+			"title" : "Project 0",
+			"dates" : "July 2015",
+			"description" : "A very basic introduction",
+			"images" : "images/project0.jpg"
+		},
+		{
 			"title" : "Portfolio",
-			"dates" : "July 2015 - August 2015",
-			"description" : "Project One was the portfolio project",
-			"images" : []
+			"dates" : "August 2015",
+			"description" : "Rough template for a portfolio presentation",
+			"images" : "images/project1.jpg"
 		}
 	],
 	"display" : ""
@@ -48,29 +62,30 @@ var education = {
 		{
 			"name" : "Mary Washington College",
 			"location" : "Fredericksburg, VA",
-			"degree" : "",
-			"majors" : [],
-			"dates" : "2001-2003",
+			"degree" : "Bachelor of Liberal Studies",
+			"majors" : ["Psychology"],
+			"dates" : "May 2003",
 			"url" : ""
 		}
 	],
 	"onlineCourses" : [
 		{
 			"title" : "Intro to Computer Science",
-			"school" : "",
-			"date" : "",
+			"school" : "Udacity",
+			"date" : "2012",
 			"url" : "",
 		},
 		{
 			"title" : "Applied Cryptography",
-			"school" : "",
-			"date" : "",
+			"school" : "Udacity",
+			"date" : "2014",
 			"url" : "",
 		}
 	],
 	"display" : ""
 };
 
+/* Display functions */
 bio.display = function() {
 	$("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
 	$("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
@@ -109,7 +124,9 @@ projects.display = function() {
 		$("#projects").append(HTMLprojectStart);
 		$(".project-entry:last").append(HTMLprojectTitle.replace("%data%", projects.item[each].title));
 		$(".project-entry:last").append(HTMLprojectDates.replace("%data%", projects.item[each].dates));
+		$(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.item[each].images));
 		$(".project-entry:last").append(HTMLprojectDescription.replace("%data%", projects.item[each].description));
+
 	}
 }
 
@@ -119,9 +136,9 @@ education.display = function() {
 			$("#education").append(HTMLschoolStart);
 			$(".education-entry:last").append(HTMLschoolName.replace("%data%", education.schools[each].name));
 			$(".education-entry:last").append(HTMLschoolDegree.replace("%data%", education.schools[each].degree));
-			$(".education-entry:last").append(HTMLschoolDates.replace("%data%", education.schools[each].dates));
 			$(".education-entry:last").append(HTMLschoolLocation.replace("%data%", education.schools[each].location));
-			$(".education-entry:last").append(HTMLschoolMajor.replace("%data%", education.schools[each].major));
+			$(".education-entry:last").append(HTMLschoolDates.replace("%data%", education.schools[each].dates));
+			$(".education-entry:last").append(HTMLschoolMajor.replace("%data%", education.schools[each].majors[0]));
 		}
 	}
 	if (education.onlineCourses){
@@ -136,16 +153,11 @@ education.display = function() {
 	}
 }
 
+/* Invoke Display functions */
 projects.display();
 bio.display();
 work.display();
 education.display();
 
-// This logs the location of user screen clicks
-$(document).click(function(loc) {
-	var x = loc.pageX;
-	var y = loc.pageY;
-	logClicks(x,y);
-});
-
+/* Append the Google Map */
 $("#mapDiv").append(googleMap);

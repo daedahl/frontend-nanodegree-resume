@@ -14,19 +14,41 @@ h6 {
   font-family: "Roboto", sans-serif;
 }
 
-.clear-fix {
-  overflow: auto;
+
+/*** Color values */
+
+h1,
+h2,
+h3 {
+  color: #e9ab17; /* gold color for headings */
 }
 
-.education-entry,
-.work-entry,
-.project-entry {
-  padding: 0 5%;
+.gold-text {
+  color: #e9ab17; /* gold */
 }
+
+p,
+span,
+em {
+  color: #d1d0ce; /* muted white for text */
+}
+
+.white-text {
+  font-weight: bold;
+  color: #d1d0ce; /* white */
+}
+
+a {
+  color: #1199c3; /* link blue */
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+
+/*** Font Sizes */
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
   line-height: 48px;
   display: inline;
 }
@@ -34,100 +56,35 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999;
   line-height: 29px;
-  padding: 10px;
+  padding: 10px 5%;
 }
 
 h3 {
   font-style: italic;
   font-size: 20px;
-  color: #000;
   line-height: 22px;
-}
-
-h4 {
-  font-weight: bold;
-  font-size: 14px;
-  color: #4a4a4a;
-  line-height: 17px;
-}
-
-h2,
-h3,
-h4,
-h5 {
-  padding:10px 5%;
-}
-
-
-.date-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999;
-  line-height: 16px;
-  /*float: left;*/
-}
-
-.location-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999;
-  line-height: 16px;
-  float: right;
+  padding: 10px 10%;
 }
 
 p {
   font-size: 14px;
-  color: #333;
   line-height: 21px;
 }
 
-a {
-  color: #1199c3;
-  text-decoration: none;
-  margin-top: 10px;
-  /*display: block;*/
+
+/*** Global */
+
+span {
+  padding: 5px;
 }
 
-.welcome-message {
-  font-style: italic;
-  font-size: 18px;
-  color: #f3f3f3;
-  line-height: 28px;
+ul {
+  list-style-type: none;
 }
 
-#skills-h3 {
-  color: #f5ae23;
-  display: none;
-}
-
-.orange {
-  background-color: #f5ae23;
-}
-
-.orange-text {
-  color: #f5ae23;
-}
-
-.white-text {
-  font-weight: bold;
-  color: #fff;
-}
-
-.gray {
-  background-color: #f3f3f3;
-  padding-bottom: 10px;
-  clear:both;
-}
-
-.dark-gray {
-  background-color: #4a4a4a;
-}
-
-/* TODO: Replace with image later */
-#header {
-  background-color: #484848;
+.clear-fix {
+  overflow: auto;
 }
 
 .flex-box {
@@ -143,30 +100,133 @@ a {
   padding: 2.5% 5%;
 }
 
-ul {
-  list-style-type: none;
+
+/*** Header specific */
+
+#header {
+  background: linear-gradient(dimgray, black); /* comment needed, use #xxx */
+}
+
+.gold { /* Remove ??? */
+  background-color: #e9ab17;
 }
 
 .biopic {
   float: left;
-  padding: 10px;
+  margin-right: 2em;
+  padding: 0;
   width: 200px;
   display: none;
+  border: solid 4px;
+  border-radius: 50%; /* round image */
 }
 
-img {
-  padding: 10px;
+.welcome-message {
+  font-style: italic;
+  font-size: 1.2em;
+  color: #d1d0ce; /* white text */
+  line-height: 2.5em;
 }
 
-span {
-  padding: 5px;
+#skills {
+  font-size: 1.5em;  /* make listed skills larger */
+  padding: 1em;
 }
 
-#lets-connect {
+
+/*** Body Specific */
+
+.date-text,
+.location-text {
+  font-style: italic;
+  font-size: 14px;
+  margin: 0.5em 0; /* need some space */
+  color: #999;
+  line-height: 16px;
+}
+
+.location-text {
+  float: right;
+}
+
+.work-entry,
+.education-entry {
+  padding: 0 15% 2.2em; /* narrow entries for easier reading */
+}
+
+#workExperience,
+#projects,
+#education {
+  padding: 1.5em 0 4em; /* need some space */
+}
+
+
+/*** Work */
+
+#workExperience {
+  background: url(../images/threeseven.png) center top #0020c2; /* semi-transparent background image with blue */
+}
+
+
+/*** Projects */
+
+#projects {
+  background: url(../images/pattern.png) #2b1b17; /* semi-transparent background image with grey */
+}
+
+.project-entry {
+  max-width: 250px; /* constrains project thumbnail size */
+  padding-right: 50px; /* space between projects */
+  display: inline-block; /* view projects side by side */
+  vertical-align: top; /* adjust for differing heights */
+}
+/********** FIX CONTAINER? */
+.project-entry:first-of-type {
+  padding-left: 15%; /* keep content aligned with above & below */
+}
+/********** POOR PRACTICE? */
+.project-entry img {
+  padding: 0;
+  width: 100%; /* fit image to conatiner */
+}
+/********** POOR PRACTICE? */
+.project-entry p {
   text-align: center;
+  margin-top: -1em; /* need for negative margin not understood */
 }
 
-/* Media queries to handle various device widths */
+
+/*** Education */
+
+#education {
+  background: url(../images/UMW.png) center #461b7e; /* semi-transparent background image with purple */
+}
+
+
+/*** Map */
+
+#map {
+  display: block;
+  height: 100%;
+  margin: 0 15%; /* keep content aligned with above & below */
+}
+
+#mapDiv {
+  height: 400px;
+  width: 100%;
+  padding-bottom: 5%;
+}
+
+
+/*** Footer */
+
+#lets-connect h2{
+  text-align: center;
+  color: #fff;
+}
+
+
+/*** Media queries to handle various device widths */
 
 @media only screen and (max-width: 1024px) {
   #lets-connect {
@@ -190,18 +250,6 @@ span {
   .welcome-message {
     display: none;
   }
-}
-
-#map {
-  display: block;
-  height: 100%;
-  margin: 0 5%;
-}
-
-#mapDiv {
-  height: 400px;
-  width: 100%;
-  padding-bottom: 5%;
 }
 
 @media only screen and (min-width: 750px) {
