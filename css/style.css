@@ -27,6 +27,10 @@ h3 {
   color: #e9ab17; /* gold */
 }
 
+.gold {
+  background-color: #e9ab17;
+}
+
 p,
 span,
 em {
@@ -104,11 +108,7 @@ ul {
 /*** Header specific */
 
 #header {
-  background: linear-gradient(dimgray, black); /* comment needed, use #xxx */
-}
-
-.gold { /* Remove ??? */
-  background-color: #e9ab17;
+  background: linear-gradient(dimgray, black); /* simple dark gradient */
 }
 
 .biopic {
@@ -140,7 +140,7 @@ ul {
 .location-text {
   font-style: italic;
   font-size: 14px;
-  margin: 0.5em 0; /* need some space */
+  margin: 0.5em 0; /* make some space */
   color: #999;
   line-height: 16px;
 }
@@ -157,14 +157,23 @@ ul {
 #workExperience,
 #projects,
 #education {
-  padding: 1.5em 0 4em; /* need some space */
+  padding: 1.5em 0 4em; /* make some space */
 }
 
 
 /*** Work */
 
 #workExperience {
-  background: url(../images/threeseven.png) center top #0020c2; /* semi-transparent background image with blue */
+  background: url(../images/tower.png) center top #0020c2; /* semi-transparent background image with blue */
+  background-size: cover;
+}
+
+.bullet {
+  list-style: disc;
+  font-size: 14px;
+  line-height: 21px;
+  margin: 1em 0 0 5em;
+  color: #d1d0ce;
 }
 
 
@@ -180,16 +189,16 @@ ul {
   display: inline-block; /* view projects side by side */
   vertical-align: top; /* adjust for differing heights */
 }
-/********** FIX CONTAINER? */
+
 .project-entry:first-of-type {
   padding-left: 15%; /* keep content aligned with above & below */
 }
-/********** POOR PRACTICE? */
+
 .project-entry img {
   padding: 0;
   width: 100%; /* fit image to conatiner */
 }
-/********** POOR PRACTICE? */
+
 .project-entry p {
   text-align: center;
   margin-top: -1em; /* need for negative margin not understood */
@@ -200,6 +209,7 @@ ul {
 
 #education {
   background: url(../images/UMW.png) center #461b7e; /* semi-transparent background image with purple */
+  background-size: cover;
 }
 
 

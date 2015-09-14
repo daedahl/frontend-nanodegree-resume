@@ -31,7 +31,7 @@ var work = {
 			"dates" : "2014-present",
 			"description" : "Responsible for evaluating, installing and maintaining communications hardware along with all related components and peripherals across a network spanning a geographical area of hundreds of square miles",
 			"bullets" : [
-				"Certified Tower Climber and Rescuer",
+				"Trained and experienced Tower Climber / Rescuer",
 				"Networking (N+) Certification"
 			]
 		}
@@ -91,7 +91,9 @@ bio.display = function() {
 	$("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
 	if (bio.contacts) {
 		$("#topContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
+		$("#footerContacts").append(HTMLfooter.replace("%data%", bio.contacts.mobile));
 		$("#topContacts").append(HTMLemail.replace("%data%", bio.contacts.email));
+		$("#footerContacts").append(HTMLfooter.replace("%data%", bio.contacts.email));
 		$("#topContacts").append(HTMLgithub.replace("%data%", bio.contacts.github));
 		$("#topContacts").append(HTMLtwitter.replace("%data%", bio.contacts.twitter));
 		$("#topContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
@@ -115,6 +117,12 @@ work.display = function() {
 			$(".work-entry:last").append(HTMLworkLocation.replace("%data%", work.jobs[each].location));
 			$(".work-entry:last").append(HTMLworkDates.replace("%data%", work.jobs[each].dates));
 			$(".work-entry:last").append(HTMLworkDescription.replace("%data%", work.jobs[each].description));
+			if(work.jobs[each].bullets){
+				for (every in work.jobs[each].bullets){
+					$(".work-entry:last").append(HTMLworkList);
+					$(".bullet-list:last").append(HTMLworkBullet.replace("%data%", work.jobs[each].bullets[every]));
+				}
+			}
 		}
 	}
 }
@@ -151,6 +159,7 @@ education.display = function() {
 			$(".education-entry:last").append(HTMLonlineURL.replace("%data%", education.onlineCourses[each].url));
 		}
 	}
+	$("#mapDiv").append(googleMap);
 }
 
 /* Invoke Display functions */
@@ -158,6 +167,3 @@ projects.display();
 bio.display();
 work.display();
 education.display();
-
-/* Append the Google Map */
-$("#mapDiv").append(googleMap);

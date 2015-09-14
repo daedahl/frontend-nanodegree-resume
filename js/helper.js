@@ -21,6 +21,9 @@ var HTMLworkTitle = '<span> - %data%</span>';
 var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<p><br>%data%</p>';
+// added optional bullet list to work entries
+var HTMLworkList = '<ul class="bullet-list"></ul>';
+var HTMLworkBullet = '<li class="bullet">%data%</li>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a href="#">%data%</a>';
@@ -40,8 +43,9 @@ var HTMLonlineTitle = '<a href="#">%data%</a>';
 var HTMLonlineSchool = '<span> - %data%</span>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
+// added footer information
+var HTMLfooter = '<li class="flex-item">%data%</li>'
 
-var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 
 
@@ -196,16 +200,12 @@ function initializeMap() {
 
 }
 
-/*
-Uncomment the code below when you're ready to implement a Google Map!
-*/
-
 // Calls the initializeMap() function when the page loads
 window.addEventListener('load', initializeMap);
 
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds
-//window.addEventListener('resize', function(e) {
-  //Make sure the map bounds get updated on page resize
-//  map.fitBounds(mapBounds);
-//});
+window.addEventListener('resize', function(e) {
+//Make sure the map bounds get updated on page resize
+  map.fitBounds(mapBounds);
+});
