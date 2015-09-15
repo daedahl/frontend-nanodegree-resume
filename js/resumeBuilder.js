@@ -52,6 +52,12 @@ var projects = {
 			"dates" : "August 2015",
 			"description" : "Rough template for a portfolio presentation",
 			"images" : "images/project1.jpg"
+		},
+		{
+			"title" : "Resume",
+			"dates" : "September 2015",
+			"description" : "Recursive Resume",
+			"images" : "images/resume.jpg"
 		}
 	],
 	"display" : ""

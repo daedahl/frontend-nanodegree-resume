@@ -185,7 +185,7 @@ ul {
 
 .project-entry {
   max-width: 250px; /* constrains project thumbnail size */
-  padding-right: 50px; /* space between projects */
+  padding-right: 60px; /* space between projects */
   display: inline-block; /* view projects side by side */
   vertical-align: top; /* adjust for differing heights */
 }
